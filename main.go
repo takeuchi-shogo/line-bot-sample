@@ -10,7 +10,8 @@ import (
 func main() {
 
 	c := config.NewConfig()
-
+	// LINE Botクライアント生成する
+	// BOT にはチャネルシークレットとチャネルトークンを環境変数から読み込み引数に渡す
 	bot, err := linebot.New(
 		c.ChannelSecret,
 		c.ChannelToken,
@@ -21,7 +22,7 @@ func main() {
 	}
 
 	message := linebot.NewTextMessage("Hello world")
-
+	// テキストメッセージを友達登録しているユーザー全員に配信する
 	if _, err = bot.BroadcastMessage(message).Do(); err != nil {
 		log.Fatal(err)
 	}

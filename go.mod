@@ -1,4 +1,4 @@
-module line-bot-sample
+module github.com/takeuchi-shogo/line-bot-sample
 
 go 1.17
 
